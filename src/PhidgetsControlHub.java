@@ -28,7 +28,7 @@ public class PhidgetsControlHub
         l.logData(true); // Log Data
         wl.run(true);
 
-        // WIP, this should catch a sigterm if sent
+        // This process will catch a SIGTERM from both inside and outside the program, and should shut everything down properly
         Runtime.getRuntime().addShutdownHook(new Thread()
         {
             @Override
