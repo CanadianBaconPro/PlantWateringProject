@@ -27,7 +27,7 @@ public class CurrentTime
         DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
         Date dateobj = new Date();
         
-        return ("\033[1;35m[" + df.format(dateobj) + "]\033[0m");
+        return ("\033[1;36m[" + df.format(dateobj) + "]\033[0m");
     }
 }
 

@@ -1,5 +1,7 @@
 //package CompSci.Phidgets.PlantWateringProject;
 
+import com.phidget22.PhidgetException;
+
 import java.io.IOException;
 
 /**
@@ -40,7 +42,6 @@ public class PhidgetsControlHub
                     System.out.printf("\n\n");
                     Thread.sleep(100); // Give objects a second to close
                     System.out.printf("\n\n");
-                    System.exit(0);
                 }
                 catch (InterruptedException | PhidgetException e)
                 {
