@@ -9,9 +9,9 @@
 currentDir=$(pwd) 
 echo "Current directory is \"$currentDir\" if all goes well you should end up back here" 
 cd ~
-rm -rf PlantWateringProject
-cd ~/CompSci
+rm -rf PWP
+cd ~/PlantWateringProject
 git pull
-cp -rf Phidgets/PlantWateringProject ../
+cp -rf ~/PlantWateringProject/ ~/PWP
 cd $currentDir
 echo "Done"
