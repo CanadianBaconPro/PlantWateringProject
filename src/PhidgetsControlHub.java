@@ -42,6 +42,7 @@ public class PhidgetsControlHub
                     System.out.printf("\n\n");
                     Thread.sleep(100); // Give objects a second to close
                     System.out.printf("\n\n");
+                    // TODO(CB): Figure out a way to wait on all sensors to close before shutting down the program
                 }
                 catch (InterruptedException e)
                 {
@@ -71,7 +72,7 @@ public class PhidgetsControlHub
         */
     }
 
-    // TODO(CB): I need to figure out a better way to end all tasks, and read variable date from files in an easy way
-    // to allow for config files from the webpage
+    // TODO(CB): I need to figure out a better way to end all tasks
+    // TODO(CB): Read variable date from files in an easy way to allow for config files from the webpage
     // TODO(CB): Fix broken ssmtp server not sending texts (RENEW Email CERT)
 }
