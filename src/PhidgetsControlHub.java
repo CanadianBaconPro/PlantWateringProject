@@ -43,7 +43,7 @@ public class PhidgetsControlHub
                     Thread.sleep(100); // Give objects a second to close
                     System.out.printf("\n\n");
                 }
-                catch (InterruptedException | PhidgetException e)
+                catch (InterruptedException e)
                 {
                     System.out.printf("\nError in Main\n%s\n\nProgram did not shut down correctly!", e);
                 }
