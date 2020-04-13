@@ -16,7 +16,7 @@ public class PhidgetsControlHub
     private static final int MotorRelayPort      = 5;
     private static final int HumiditySensorPort  = 2;
     private static final int LightSensorPort     = 1;
-    
+
     public static void main(String[] args)
     {
         CheckWaterLevel wl = new CheckWaterLevel(MotorRelayPort, SensorRelayPort, MoistureSensorPort);

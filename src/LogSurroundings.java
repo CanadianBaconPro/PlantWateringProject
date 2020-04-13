@@ -66,6 +66,8 @@ public class LogSurroundings
                 while (log) 
                 {
                     System.out.printf("\n%s ---\nLight %slx\nHumidity %s%%\nTemperature %s°C\n", time.returnTime(), l.getIlluminance(), h.getHumidity(), t.getTemperature());
+                    String[] data = {"t-", time.returnTime(), "\n1-", Double.toString(l.getIlluminance()), "\n2-", Double.toString(h.getHumidity()), "\n3-", Double.toString(t.getTemperature()), "\n\n"};
+                    FilesData.append("./data.log", data);
                     Thread.sleep(5500); 
                 }
                 // Close objects

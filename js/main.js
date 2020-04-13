@@ -8,7 +8,8 @@ app.listen(8080, function()
 
 app.get('/', function(req, res)
 {
-    res.render('index') // Render index if accessing main page
+    res.render('index', {name: 'Hello'}) // Render index if accessing main page
 })
 
+app.use(express.static(__dirname + '/views/'))
 app.set('view engine', 'ejs')
