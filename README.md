@@ -1,5 +1,15 @@
 # Plant Watering Project with Phidgets
 
+## This is the more stable branch 
+
+simply run 
+
+    java -jar PCH.jar
+
+to start the program
+
+---
+
 ## Work In Progress
 Start by running PhidgetsControlHub either by compiling the program, or using the StartPlantService script
 
@@ -21,7 +31,7 @@ You can look into this script for compilation instructions if you wish to manual
     3.) systemctl enable waterplant
 ---
 ## Installing bin files
-This is not essential, but I like these tools as they make prototyping easier. 
+This is not essential, but I like these tools as they make prototyping easier.
 Simply use install, or manually copy the files to the /bin directory
 	
 	install {file} /bin
@@ -33,3 +43,11 @@ Simply use install, or manually copy the files to the /bin directory
 	install cpOver /bin
 
 Make sure you have the proper permissions to copy to the /bin directory, you may need to append sudo to the start of the command if you are not already a super user.
+
+---
+
+````
+Compile to jarfile using
+- jar cfe app.jar MyApp MyApp.class
+
+https://docs.oracle.com/javase/tutorial/deployment/jar/appman.html
