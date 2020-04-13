@@ -1,4 +1,4 @@
-//package CompSci.Phidgets.PlantWateringProject;
+package PlantWateringProject.src;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

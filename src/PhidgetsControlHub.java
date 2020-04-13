@@ -1,4 +1,4 @@
-//package CompSci.Phidgets.PlantWateringProject;
+package PlantWateringProject.src;
 
 import com.phidget22.PhidgetException;
 
@@ -17,7 +17,6 @@ public class PhidgetsControlHub
     private static final int HumiditySensorPort  = 2;
     private static final int LightSensorPort     = 1;
     
-    // TODO(CB): Compile all files into a jar package so that it can be run without frills
     public static void main(String[] args)
     {
         CheckWaterLevel wl = new CheckWaterLevel(MotorRelayPort, SensorRelayPort, MoistureSensorPort);

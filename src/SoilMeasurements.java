@@ -1,4 +1,4 @@
-//package CompSci.Phidgets.PlantWateringProject;
+package PlantWateringProject.src;
 
 import com.phidget22.*;
 import java.time.LocalDateTime;
