@@ -1,0 +1,16 @@
+{
+  "name": "plantwateringproject",
+  "version": "1.0.0",
+  "description": "Web Page for the Phidgets",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CanadianBaconPro",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.9.3",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}

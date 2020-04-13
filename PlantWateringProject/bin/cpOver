@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Script made by CanadianBacon
+# 
+# Removes PlantWateringProject dir, clones most recent one and copies it over
+# Simply move this file to /bin, or add its file location to your path
+# 
+
+currentDir=$(pwd) 
+echo "Current directory is \"$currentDir\" if all goes well you should end up back here" 
+cd ~
+rm -rf PlantWateringProject
+cd ~/CompSci
+git pull
+cp -rf Phidgets/PlantWateringProject ../
+cd $currentDir
+echo "Done"

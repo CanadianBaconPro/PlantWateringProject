@@ -1,0 +1,14 @@
+[Unit]
+Description = Plant Watering Service to execute the Java code.
+After = network.target
+StartLimitIntervalSec = 0
+
+[Service]
+Type = simple
+Restart = always
+RestartSec = 1
+User = phidgetsbc
+ExecStart = /bin/bash -c /home/<Path To Script>/StartPlantMontioring.run
+
+[Install]
+WantedBy = multi-user.target
