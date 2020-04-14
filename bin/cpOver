@@ -12,6 +12,7 @@ cd ~
 rm -rf PWP
 cd ~/PlantWateringProject
 git pull
-cp -rf ~/PlantWateringProject/ ~/PWP
+mkdir -p ~/PWP
+cp -rf ~/PlantWateringProject ~/PWP/PlantWateringProject
 cd $currentDir
 echo "Done"
