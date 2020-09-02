@@ -1,5 +1,0 @@
-#!/bin/bash
-# This script is executed when the plant is watered. Currently it will send 
-#    <------This Message----->   to    <----This Address----> 
-echo "Plant is being watered!" | ssmtp 4032784108@txt.bell.ca
-# You can change these parameters if you like
