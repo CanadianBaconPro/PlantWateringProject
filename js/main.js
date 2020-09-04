@@ -20,12 +20,6 @@ app.listen(port, function()
 app.get('/', function(req, res)
 {
     res.render('index')
-    //while(true)
-    //{
-    //    reload()
-    //    
-    //    console.log("reloaded")
-    //}
 })
 
 // Set view engine to ejs with a static webpage
