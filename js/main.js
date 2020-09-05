@@ -1,12 +1,6 @@
-//import Styles from '!style-loader!css-loader?modules!./styles.css'
 const express = require('express')
 const app = express()
 
-
-//async function reload()
-//{
-//    await new Promise(r => setTimeout(r, 2000));
-//}
 
 // Port for Node.js server to listen on
 port = 8080

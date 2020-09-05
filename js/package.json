@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/CanadianBaconPro/PlantWateringProject#readme",
   "dependencies": {
-    "css-loader": "^4.2.2",
     "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "ts-loader": "^8.0.3"
+    "express": "^4.17.1"
   }
 }
