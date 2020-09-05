@@ -12,10 +12,6 @@ body {
   justify-content: space-evenly;
 }
 
-.left {
-  display: flex;
-  justify-content: space-evenly;
-}
 
 .padded {
   padding: 15px;

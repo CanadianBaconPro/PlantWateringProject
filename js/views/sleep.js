@@ -9,7 +9,7 @@ async function sleep()
 {
   while(true)
   {
-    await sleeptime(15000);
+    await sleeptime(20000);
     location.reload(true/false);
   }
 }
