@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>WetPlant</title>
+        <title>Success!</title>
 
         <!-- Fluid UI -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,28 +11,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdn.jottocraft.com/fluid/v4.min.js"></script>
 
-        <!-- Hosted server for Chart.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-
         <!-- Main Style Sheet-->
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 
-    <body class="light">
-        
-        <div class="container">
-            <canvas class="wrapper" id="SunlightOverTime" width="1600" height="800"></canvas>
-            <canvas class="wrapper" id="TemperatureOverTime" width="1600" height="800"></canvas>
-            <canvas class="wrapper" id="HumidityOverTime" width="1600" height="800"></canvas>
-        </div>  
-        
+    <body>
         <div class="padded">
-            <form method="POST" action="/waternow">
-                <button class="wrapper" type="submit">Water Override</button>
-            </form>
+            <div class="alert success">
+                <div class="header">
+                    <h5><i class="material-icons">check_circle</i> Success!</h5>
+                </div>
+                <p>The plant is now being watered</p>
+            </div>
         </div>
-
-        <script src="sleep.js"></script>
-        <script src="script.js"></script>
     </body>
+
+    <script src="success.js"></script>
 </html>

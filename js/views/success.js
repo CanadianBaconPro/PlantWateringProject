@@ -1,5 +1,3 @@
-
-
 function sleeptime(ms) 
 {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -9,9 +7,9 @@ async function sleep()
 {
   while(true)
   {
-    await sleeptime(15000);
-    location.reload(true/false);
+    await sleeptime(4000);
+    window.location = "/";
   }
 }
-  
+
 sleep();
