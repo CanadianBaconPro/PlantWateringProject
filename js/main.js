@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 
-
 // This should take the server time so clients should not be able to change their local time to get around the cool down???
 // not yet tested 
 var time = -1

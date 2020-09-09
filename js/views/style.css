@@ -4,6 +4,12 @@ body {
 
 .txtalign {
   text-align: center;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 40px 20px;
 }
 
 .wrapper {
