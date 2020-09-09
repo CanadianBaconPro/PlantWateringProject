@@ -39,7 +39,7 @@ app.get('/', function(req, res)
 
 app.post('/waternow', function(req, res)
 {
-    if(watertimeout() == true)
+    if (watertimeout() == true)
     {
         res.render('success')
     }
