@@ -11,4 +11,4 @@ function readData(file)
 	client.send();
 }
 
-readData("http://127.0.0.1:8000/js/time.txt.0.0.1/js/time.txt");
+readData("http://127.0.0.1:8000/js/time.txt");
