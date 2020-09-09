@@ -2,9 +2,24 @@ const express = require('express')
 const { timeout } = require('async')
 const app = express()
 
+var mins = new Date()
+
+var time = -1
 function watertimeout(req)
 {
-    return true
+    var currentTime = mins.getMinutes()
+
+    // this is just a temporary way to avoid spamming of the water function
+    if ((currentTime - time) > 2 || time == -1)
+    {
+        time = currentTime
+        return true
+    }
+    else 
+    {
+        return false
+    }
+    // This is where we will send the request to the java program to start the plant watering 
 }
 
 async function asyncCall() 
@@ -37,7 +52,7 @@ app.post('/waternow', function(req, res)
     }
     else
     {
-        res.redirect('index')
+        res.render('failure')
     }
 })
 
