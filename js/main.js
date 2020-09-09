@@ -1,8 +1,5 @@
 const express = require('express')
-const { timeout } = require('async')
 const app = express()
-
-var mins = new Date()
 
 
 // This should take the server time so clients should not be able to change their local time to get around the cool down???
@@ -10,6 +7,7 @@ var mins = new Date()
 var time = -1
 function watertimeout(req)
 {
+    var mins = new Date()
     var currentTime = mins.getMinutes()
 
     // this is just a temporary way to avoid spamming of the water function
@@ -23,14 +21,6 @@ function watertimeout(req)
         return false
     }
     // This is where we will send the request to the java program to start the plant watering 
-}
-
-async function asyncCall() 
-{
-  console.log('calling');
-  const result = await resolveAfter2Seconds();
-  console.log(result);
-  // expected output: "resolved"
 }
 
 // Port for Node.js server to listen on
