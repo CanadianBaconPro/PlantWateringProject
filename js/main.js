@@ -4,6 +4,9 @@ const app = express()
 
 var mins = new Date()
 
+
+// This should take the server time so clients should not be able to change their local time to get around the cool down???
+// not yet tested 
 var time = -1
 function watertimeout(req)
 {
