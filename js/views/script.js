@@ -1,8 +1,8 @@
 
 
 
-var time = (localStorage.getItem("../time.txt")).split(" ");
-var sunlight = [18.5, 18.7, 18.9, 20.5, 25.5, 20.3, 18.5, 18.7, 18.9, 20.5, 20.2, 20, 19.3]
+var time = (localStorage.getItem("time")).split(" ")
+var sunlight = (localStorage.getItem("sunlight")).split(" ")
 var temperature = [18.5, 18.7, 18.9, 20.5, 25.5, 20.3, 18.5, 18.7, 18.9, 19, 19.2, 17]
 var humidity = [18.5, 18.7, 18.9, 20.5, 25.5, 20.3, 18.5, 18.7, 18.9, 20.5, 20.2, 20, 19.3]
 

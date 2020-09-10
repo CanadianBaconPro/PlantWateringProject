@@ -8,7 +8,7 @@ function watertimeout(req)
 {
     var mins = new Date()
     var currentTime = mins.getMinutes()
-    
+    console.log(currentTime  + " - " + time + " = " + (currentTime - time))
     // this is just a temporary way to avoid spamming of the water function
     if ((currentTime - time) > 2 || time == -1)
     {
