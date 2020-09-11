@@ -16,6 +16,8 @@ public class LogSurroundings
     private TemperatureSensor t = null;
     private HumiditySensor h = null;
     private CurrentTime time = null;
+
+    private String[] space = {" "};
     
     /**
      * Init objects
@@ -67,10 +69,14 @@ public class LogSurroundings
                 {
                     System.out.printf("\n%s ---\nLight %slx\nHumidity %s%%\nTemperature %s°C\n", time.returnTime(), l.getIlluminance(), h.getHumidity(), t.getTemperature());
                     String[] data = {"t-" + time.returnTime(), "\nL-" + Double.toString(l.getIlluminance()), "\nH-" + Double.toString(h.getHumidity()), "\nT-" + Double.toString(t.getTemperature()), "\n\n"};
-                    FilesData.append("../log/sunlight.txt", (Double.toString(l.getIlluminance()) + " ").split(" "));
-                    FilesData.append("../log/temperature.txt", (Double.toString(t.getTemperature()) + " ").split(" "));
-                    FilesData.append("../log/humidity.txt", (Double.toString(h.getHumidity()) + " ").split(" "));
-                    FilesData.append("../log/time.txt", (time.returnSimpleTime() + " ").split(" "));
+                    FilesData.append("../log/sunlight.txt", (Double.toString(l.getIlluminance())).split(" "));
+                    FilesData.append("../log/sunlight.txt", space);
+                    FilesData.append("../log/temperature.txt", (Double.toString(t.getTemperature())).split(" "));
+                    FilesData.append("../log/temperature.txt", space);
+                    FilesData.append("../log/humidity.txt", (Double.toString(h.getHumidity())).split(" "));
+                    FilesData.append("../log/humidity.txt", space);
+                    FilesData.append("../log/time.txt", (time.returnSimpleTime()).split(" "));
+                    FilesData.append("../log/time.txt", space);
                     Thread.sleep(20000); 
                 }
                 // Close objects

@@ -108,10 +108,10 @@ public class FilesData
         {
             System.out.printf("Error | %s\n", e.getMessage());
         }
-        pw.println();
+        //pw.println();
         for (int i = 0; i < data.length; i++)
         {
-            if (data[i] != null) pw.println(data[i]);
+            if (data[i] != null) pw.print(data[i]);
         }
         
         pw.close();
