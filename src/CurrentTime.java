@@ -9,9 +9,6 @@ import java.util.Date;
  * @author Harper Kelly USERID # 803225004
  */
 
-// TODO(CB): I need to figure out how to call this every time a log is made, but without re creating the object
-// so that it doesnt slow down the process, even using multi threading is just adding extra load
-public class CurrentTime
 {
     public CurrentTime()
     {
@@ -28,6 +25,18 @@ public class CurrentTime
         Date dateobj = new Date();
         
         return ("\033[1;35m[" + df.format(dateobj) + "]\033[0m");
+    }
+
+
+    /**
+     * @return Date and Time in String Format without color
+     */
+    public final String returnSimpleTime()
+    {
+        DateFormat df = new SimpleDateFormat("HH:mm");
+        Date dateobj = new Date();
+
+        return (df.format(dateobj));
     }
 }
 
