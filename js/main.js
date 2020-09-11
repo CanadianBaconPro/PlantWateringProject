@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
 
+// Port for Node.js server to listen on
+port = 8080
+
+
 // This should take the server time so clients should not be able to change their local time to get around the cool down???
 // not yet tested 
 var time = -1
@@ -21,9 +25,6 @@ function watertimeout(req)
     }
     // This is where we will send the request to the java program to start the plant watering 
 }
-
-// Port for Node.js server to listen on
-port = 8080
 
 app.listen(port, function()
 {
