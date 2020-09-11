@@ -7,7 +7,7 @@ async function sleep()
 {
   while(true)
   {
-    await sleeptime(20000);
+    await sleeptime(200000);
     location.reload(true/false);
   }
 }
