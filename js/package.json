@@ -1,0 +1,23 @@
+{
+  "name": "plantwateringproject",
+  "version": "1.0.0",
+  "description": "Front end for Plant Watering Project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CanadianBaconPro/PlantWateringProject.git"
+  },
+  "author": "Canadian Bacon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CanadianBaconPro/PlantWateringProject/issues"
+  },
+  "homepage": "https://github.com/CanadianBaconPro/PlantWateringProject#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}

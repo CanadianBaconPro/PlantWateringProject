@@ -1,0 +1,33 @@
+body {
+  font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+.txtalign {
+  text-align: center;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 40px 20px;
+}
+
+.wrapper {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.padded {
+  padding: 15px;
+}
+
+.cv {
+  width: 40%;
+  height: 40%;
+}

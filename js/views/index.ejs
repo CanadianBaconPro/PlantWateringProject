@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WetPlant</title>
+
+        <!-- Fluid UI -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Extended" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="https://cdn.jottocraft.com/fluid/v4.min.css" media="screen,projection"/>
+        <script async src="https://cdn.jottocraft.com/fluid/assets/tinycolor.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jottocraft.com/fluid/v4.min.js"></script>
+
+        <!-- Hosted server for Chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+        <!-- Main Style Sheet-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body class="light">
+
+        <div>
+            <h2 class="txtalign">WetPlant</h2>
+        </div>
+        
+        <div class="container">
+            <canvas class="wrapper" id="SunlightOverTime" width="1600" height="800"></canvas>
+            <canvas class="wrapper" id="TemperatureOverTime" width="1600" height="800"></canvas>
+            <canvas class="wrapper" id="HumidityOverTime" width="1600" height="800"></canvas>
+        </div>  
+        
+        <div class="txtalign">
+            <form method="POST" action="/waternow">
+                <button class="wrapper" type="submit"><i class="material-icons">waves</i> Water Override</button>
+            </form>
+        </div>
+
+        <script src="sleep.js"></script>
+        <script src="script.js"></script>
+        <script src="read.js"></script>
+    </body>
+</html>
