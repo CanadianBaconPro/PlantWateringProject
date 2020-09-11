@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Script created by CanadianBacon
+#
+# Usage 
+# ./StartNodeServer
+# or 
+# ./StartNodeServer -s (For running in the background)
+#
+# This should only be ran in the working directory, otherwise it wont work
+
+export PATH="/root/node-v12.18.3-linux-armv7l/bin:$PATH"
+
+if [ "$1" = "-s" ]
+then
+    node main.js </dev/null &>./NodeLog.txt &
+    echo "Running, Output data being saved to NodeLog.txt"
+else
+    echo "Running Interactive Mode"
+    node main.js
+fi
