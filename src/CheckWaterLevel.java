@@ -48,18 +48,13 @@ public class CheckWaterLevel
                         }  
                         else
                         {
-                            try
-			                {
-				                Process pro = Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", "./message.run"});
-				                System.out.printf("Text Sent Successfully\n");
-			                }
-			                catch (Exception e) {System.out.printf("Error in sending text\n");}
+                            SendText.text("./wateringplant.message");
 			                p.runPump(timeout);
 			                System.out.printf("\n%s --- \033[1;36mWatering\033[0m\n", time.returnTime());
 			                Thread.sleep((timeout + 2000));
                         }
                     }
-                    Thread.sleep(1000000);
+                    Thread.sleep(1800000);
                 }
                 // Close objects
                 p.closeObjects();

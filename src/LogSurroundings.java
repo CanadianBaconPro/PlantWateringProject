@@ -59,12 +59,14 @@ public class LogSurroundings
      *
      * @param log Boolean which tells the thread to stop logging in the event of termination to prevent a hung process
      */
+    public boolean retry = true;
     public void logData(boolean log)
     {
         new Thread(() -> // Async Lambda expression for logging data to a file
         {
             try
             {
+                while (log)
                 {
                     System.out.printf("\n%s ---\nLight %slx\nHumidity %s%%\nTemperature %s°C\n", time.returnTime(), l.getIlluminance(), h.getHumidity(), t.getTemperature());
                     String[] data = {"t-" + time.returnTime(), "\nL-" + Double.toString(l.getIlluminance()), "\nH-" + Double.toString(h.getHumidity()), "\nT-" + Double.toString(t.getTemperature()), "\n\n"};
@@ -76,7 +78,7 @@ public class LogSurroundings
                     FilesData.append("../log/humidity.txt", space);
                     FilesData.append("../log/time.txt", (time.returnSimpleTime()).split(" "));
                     FilesData.append("../log/time.txt", space);
-                    Thread.sleep(3600000); 
+                    Thread.sleep(300000); 
                 }
                 // Close objects
                 l.close();
@@ -87,7 +89,10 @@ public class LogSurroundings
             }
             catch (PhidgetException | InterruptedException e)
             {
+                //TODO: add retry functionality
                 System.out.printf("\nError Running Sensors, Quitting!\n%s", e);
+                if (retry) logData(true);
+
             }
         }).start();
     }
