@@ -89,6 +89,7 @@ public class FilesData
         
         pw.close();
     }
+
     /**
      * 
      * @param filepath Set path for file
@@ -111,6 +112,33 @@ public class FilesData
         for (int i = 0; i < data.length; i++)
         {
             if (data[i] != null) pw.println(data[i]);
+        }
+        
+        pw.close();
+    }
+
+    /**
+     * 
+     * @param filepath Set path for file
+     * @param data Data to be printed, in an array
+     */
+    public static void append(String filepath, String[] data)
+    {
+        FileWriter fw = null;
+        PrintWriter pw = null;
+        try 
+        {
+            fw = new FileWriter(filepath, true);
+            pw = new PrintWriter(fw);
+        }
+        catch (IOException e)
+        {
+            System.out.printf("Error | %s\n", e.getMessage());
+        }
+        //pw.println();
+        for (int i = 0; i < data.length; i++)
+        {
+            if (data[i] != null) pw.print(data[i]);
         }
         
         pw.close();
