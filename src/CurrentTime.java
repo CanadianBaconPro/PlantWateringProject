@@ -9,6 +9,7 @@ import java.util.Date;
  * @author Harper Kelly USERID # 803225004
  */
 
+public class CurrentTime 
 {
     public CurrentTime()
     {
