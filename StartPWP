@@ -33,7 +33,6 @@ then
 else
   printf "\n"
   python3 -m http.server </dev/null &>log/pyserver.txt &
-  printf "\n"
   echo "HTTP Server Started"
   cd js/
   printf "\n"
