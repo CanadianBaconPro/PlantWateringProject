@@ -1,3 +1,5 @@
+var ip = "192.168.99.1:8000";
+
 function getData(keyword, path)
 {
 	var client = new XMLHttpRequest();
@@ -13,7 +15,7 @@ function getData(keyword, path)
 	client.send()
 }
 
-getData("time", "http://127.0.0.1:8000/log/time.txt");
-getData("sunlight", "http://127.0.0.1:8000/log/sunlight.txt");
-getData("temperature", "http://127.0.0.1:8000/log/temperature.txt");
-getData("humidity", "http://127.0.0.1:8000/log/humidity.txt");
+getData("time", "http://" + ip + "/log/time.txt");
+getData("sunlight", "http://" + ip + "/log/sunlight.txt");
+getData("temperature", "http://" + ip + "/log/temperature.txt");
+getData("humidity", "http://" + ip + "/log/humidity.txt");
