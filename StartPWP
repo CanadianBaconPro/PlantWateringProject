@@ -20,19 +20,19 @@ then
   ./http.server.py &
   echo "HTTP Server Started"
   cd js/
-  ./js/StartNodeServer &
+  ./StartNodeServer &
   echo "Node.js Server Started"
   cd ../src/
-  ./src/StartPlantService -s
+  ./StartPlantService -s
   cd - 
 else
   ./http.server.py &
   echo "HTTP Server Started"
   cd js/
-  ./js/StartNodeServer &
+  ./StartNodeServer &
   echo "Node.js Server Started"
   cd ../src/
-  ./src/StartPlantService
+  ./StartPlantService
   cd - 
 fi
 
