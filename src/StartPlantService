@@ -21,7 +21,7 @@ echo "Compiled Successfully"
 if [ "$1" = "-s" ]
 then
   java -classpath .:phidget22.jar PhidgetsControlHub </dev/null &>../log/logfile.txt &
-  echo "Running, Output data being saved to PhidgetsControlHub/logfile.txt"
+  echo "Running, Output data being saved to log/logfile.txt"
 else
   echo "Running Interactive Mode"
   java -classpath .:phidget22.jar PhidgetsControlHub
