@@ -17,7 +17,7 @@ echo "Starting modules"
 
 if [ "$1" = "-s" ]
 then
-  ./http.server.py &
+  python3 -m http.server &
   echo "HTTP Server Started"
   cd js/
   ./StartNodeServer &
@@ -26,7 +26,7 @@ then
   ./StartPlantService -s
   cd - 
 else
-  ./http.server.py &
+  python3 -m http.server &
   echo "HTTP Server Started"
   cd js/
   ./StartNodeServer &
