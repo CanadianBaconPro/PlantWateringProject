@@ -64,7 +64,7 @@ public class LogSurroundings
         new Thread(() -> // Async Lambda expression for logging data to a file
         {
             try
-            {3600000
+            {
                 {
                     System.out.printf("\n%s ---\nLight %slx\nHumidity %s%%\nTemperature %s°C\n", time.returnTime(), l.getIlluminance(), h.getHumidity(), t.getTemperature());
                     String[] data = {"t-" + time.returnTime(), "\nL-" + Double.toString(l.getIlluminance()), "\nH-" + Double.toString(h.getHumidity()), "\nT-" + Double.toString(t.getTemperature()), "\n\n"};
