@@ -7,4 +7,4 @@
 
 ps aux | grep http.server
 ps aux | grep main.js
-ps aux | grep -i plantwateringproject
+ps aux | grep -i java

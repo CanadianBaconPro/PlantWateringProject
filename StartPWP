@@ -17,22 +17,32 @@ echo "Starting modules"
 
 if [ "$1" = "-s" ]
 then
+  echo "\n"
   python3 -m http.server </dev/null &>log/pyserver.txt &
+  echo "\n"
   echo "HTTP Server Started"
   cd js/
+  echo "\n"
   ./StartNodeServer &
   echo "Node.js Server Started"
   cd ../src/
+  echo "\n"
   ./StartPlantService -s
   cd - 
+  echo "\n"
 else
+  echo "\n"
   python3 -m http.server </dev/null &>log/pyserver.txt &
+  echo "\n"
   echo "HTTP Server Started"
   cd js/
+  echo "\n"
   ./StartNodeServer &
   echo "Node.js Server Started"
   cd ../src/
+  echo "\n"
   ./StartPlantService
   cd - 
+  echo "\n"
 fi
 
