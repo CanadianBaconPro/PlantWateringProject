@@ -19,15 +19,20 @@ if [ "$1" = "-s" ]
 then
   ./http.server.py &
   echo "HTTP Server Started"
+  cd js/
   ./js/StartNodeServer &
   echo "Node.js Server Started"
-  ./src/StartPlantService -s 
+  cd ../src/
+  ./src/StartPlantService -s
+  cd - 
 else
-  echo "Running Interactive Mode"
   ./http.server.py &
   echo "HTTP Server Started"
+  cd js/
   ./js/StartNodeServer &
   echo "Node.js Server Started"
+  cd ../src/
   ./src/StartPlantService
+  cd - 
 fi
 
