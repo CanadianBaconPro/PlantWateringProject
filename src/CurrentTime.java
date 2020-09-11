@@ -3,6 +3,7 @@
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  *
@@ -33,11 +34,12 @@ public class CurrentTime
      * @return Date and Time in String Format without color
      */
     public final String returnSimpleTime()
-    {
-        DateFormat df = new SimpleDateFormat("HH:mm");
-        Date dateobj = new Date();
+    {   
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        sdf.setTimeZone(TimeZone.getTimeZone("MST"));
+        Date d = new Date();
 
-        return (df.format(dateobj));
+        return (sdf.format(d));
     }
 }
 
