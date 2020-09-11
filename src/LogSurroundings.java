@@ -59,7 +59,7 @@ public class LogSurroundings
      */
     public void logData(boolean log)
     {
-        new Thread(() -> // Async Lambda expression for logging data to a file, Not currently logging to a file
+        new Thread(() -> // Async Lambda expression for logging data to a file
         {
             try
             {
@@ -68,7 +68,10 @@ public class LogSurroundings
                     System.out.printf("\n%s ---\nLight %slx\nHumidity %s%%\nTemperature %s°C\n", time.returnTime(), l.getIlluminance(), h.getHumidity(), t.getTemperature());
                     String[] data = {"t-" + time.returnTime(), "\nL-" + Double.toString(l.getIlluminance()), "\nH-" + Double.toString(h.getHumidity()), "\nT-" + Double.toString(t.getTemperature()), "\n\n"};
                     FilesData.append("./data.log", data);
-                    Thread.sleep(5500); 
+                    FilesData.append("../log/sunlight.txt", Double.toString(l.getIlluminance()));
+                    FilesData.append("../log/humidity.txt", Double.toString(h.getHumidity()));
+                    FilesData.append("../log/time.txt", time.returnTime());
+                    Thread.sleep(3600000); 
                 }
                 // Close objects
                 l.close();
