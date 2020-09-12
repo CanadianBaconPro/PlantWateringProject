@@ -23,7 +23,7 @@ then
   echo "HTTP Server Started"
   cd js/
   printf "\n"
-  ./StartNodeServer &
+  ./StartNodeServer -s &
   echo "Node.js Server Started"
   cd ../src/
   printf "\n"
@@ -36,7 +36,7 @@ else
   echo "HTTP Server Started"
   cd js/
   printf "\n"
-  ./StartNodeServer &
+  ./StartNodeServer -s &
   echo "Node.js Server Started"
   cd ../src/
   printf "\n"
