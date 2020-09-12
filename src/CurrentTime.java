@@ -23,10 +23,11 @@ public class CurrentTime
      */
     public String returnTime()
     {
-        DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-        Date dateobj = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+        sdf.setTimeZone(TimeZone.getTimeZone("MST"));
+        Date d = new Date();
         
-        return ("\033[1;35m[" + df.format(dateobj) + "]\033[0m");
+        return ("\033[1;35m[" + sdf.format(d) + "]\033[0m");
     }
 
 
