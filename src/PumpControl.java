@@ -31,6 +31,8 @@ public class PumpControl
             System.exit(-1);
         }
     }
+
+    public PumpControl() {};
     
     /**
      * 
