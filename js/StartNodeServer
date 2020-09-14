@@ -9,6 +9,8 @@
 #
 # This should only be ran in the working directory, otherwise it wont work
 
+
+# You can change this to add node to your path if it isnt already installed
 export PATH="/root/node-v12.18.3-linux-armv7l/bin:$PATH"
 
 if [ "$1" = "-s" ]

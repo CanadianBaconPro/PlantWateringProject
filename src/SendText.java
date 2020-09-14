@@ -9,8 +9,8 @@ public class SendText
         try
 		{
 		    Process pro = Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", PathToMessage});
-		    System.out.printf("Text Sent Successfully\n");
+		    System.out.printf("Process Executed Successfully\n");
         }
-        catch (Exception e) {System.out.printf("Error in sending text\n");}
+        catch (Exception e) {System.out.printf("Error in Executing Process\n");}
     }
 }

@@ -1,6 +1,6 @@
 //package PlantWateringProject.src;
 
-import com.phidget22.PhidgetException;
+import com.phidget22.*;
 
 import java.io.IOException;
 

@@ -62,7 +62,7 @@ public class LogSurroundings
     public boolean retry = true;
     public void logData(boolean log)
     {
-        new Thread(() -> // Async Lambda expression for logging data to a file
+        new Thread(() -> // Async expression for logging data to a file
         {
             try
             {
@@ -78,7 +78,7 @@ public class LogSurroundings
                     FilesData.append("../log/humidity.txt", space);
                     FilesData.append("../log/time.txt", (time.returnSimpleTime()).split(" "));
                     FilesData.append("../log/time.txt", space);
-                    Thread.sleep(300000); 
+                    Thread.sleep(3600000); 
                 }
                 // Close objects
                 l.close();
