@@ -34,7 +34,7 @@ public class WaterOverride
         try 
         {
             socketBind = new ServerSocket(port);
-            System.out.printf("\n%s---\n Socket Bound on %s\n", time.returnTime(), port);
+            System.out.printf("\n%s---\nSocket Bound on %s\n", time.returnTime(), port);
         }
         catch (Exception e) { System.out.printf("\nError in creating socket \n%s", e); }
     }
