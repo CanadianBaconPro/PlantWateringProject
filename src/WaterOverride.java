@@ -3,7 +3,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
+import com.phidget22.*;
 
+
+/**
+ *  @author CanadianBacon
+ */
 public class WaterOverride 
 {
     // Change how long the motor runs
