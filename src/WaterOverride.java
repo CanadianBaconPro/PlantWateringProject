@@ -17,6 +17,7 @@ public class WaterOverride
     // init objects
     private PumpControl p = null;
     private CurrentTime time = null;
+    
     // Objects for listening for request from frontend
     private ServerSocket socketBind = null;
     private Socket s = null;
@@ -55,9 +56,9 @@ public class WaterOverride
                 {
                     // Try and recieve response
                     in = s.getInputStream();
-                    inr = new BufferedReader( new InputStreamReader(in));
+                    inr = new BufferedReader(new InputStreamReader(in));
                     String response = inr.readLine();
-                    System.out.printf("\n\n%s\ndata\n", response);
+                    System.out.printf("\n\n\'%s\'\n\ndata\n\n", response);
                     /// See if response requires the plant to be watered
                     if (response.compareTo("W") == 0)
                     {
