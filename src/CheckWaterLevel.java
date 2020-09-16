@@ -61,6 +61,7 @@ public class CheckWaterLevel
                     Thread.sleep(1800000);
                 }
                 // Close objects
+                wo.listen(false);
                 p.closeObjects();
                 sm.closeObjects();
             }

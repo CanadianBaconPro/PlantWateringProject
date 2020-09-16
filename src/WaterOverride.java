@@ -31,7 +31,6 @@ public class WaterOverride
         try 
         {
             socketBind = new ServerSocket(9595);
-            s = socketBind.accept();
         }
         catch (Exception e) { System.out.printf("\nError in creating socket \n%s", e); }
     }
@@ -46,6 +45,8 @@ public class WaterOverride
         {
             try
             {
+                System.out.printf("%s---\nTrying to listen for override code\n")
+                s = socketBind.accept();
                 while (enable)
                 {
                     // Try and recieve response
@@ -61,6 +62,11 @@ public class WaterOverride
                     }
                     Thread.sleep(100);
                 }
+                // Close objects
+                socketBind.close();
+                s.close();
+                in.close();
+                inr.close();
             }
             catch (Exception e)
             {
