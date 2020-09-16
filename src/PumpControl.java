@@ -32,7 +32,10 @@ public class PumpControl
         }
     }
 
-    public PumpControl() {};
+    public PumpControl() 
+    {
+
+    }
     
     /**
      * 
@@ -44,6 +47,7 @@ public class PumpControl
         {
             try 
             {
+                System.out.printf("\nRunning\n");
                 motorRelay.setState(true);
                 Thread.sleep(timeout);
                 motorRelay.setState(false);

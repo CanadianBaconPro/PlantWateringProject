@@ -63,7 +63,7 @@ public class WaterOverride
                     if (response != null && response.compareTo("W") == 0)
                     {
                         System.out.printf("\n%sPump Run Request From Website\n", time.returnTime());
-                        p.runPump(timeout);
+                        p.runPumpWithoutWait(timeout);
                     }
                     s.close(); // Maybe move inside loop
                     in.close();
@@ -76,7 +76,7 @@ public class WaterOverride
             catch (Exception e)
             {
                 //TODO: Does it Work? 
-                System.out.printf("\nError, Quitting!\n%s", e);
+                System.out.printf("\nError, Quitting!\n%s\n", e);
                 System.exit(-9595);
             }
         }).start();
