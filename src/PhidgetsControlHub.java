@@ -65,6 +65,7 @@ public class PhidgetsControlHub
             catch (IOException | InterruptedException e)
             {
                 System.out.printf("\nError in Main\n%s", e);
+                System.exit(-1);
             }
         }
         /*

@@ -57,7 +57,7 @@ public class WaterOverride
                     in = s.getInputStream();
                     inr = new BufferedReader( new InputStreamReader(in));
                     String response = inr.readLine();
-
+                    System.out.printf("\n\n%s\ndata\n", response);
                     /// See if response requires the plant to be watered
                     if (response.compareTo("W") == 0)
                     {
@@ -76,6 +76,7 @@ public class WaterOverride
             {
                 //TODO: Does it Work? 
                 System.out.printf("\nError, Quitting!\n%s", e);
+                System.exit(-1);
             }
         }).start();
     }
