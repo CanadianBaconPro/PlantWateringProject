@@ -11,6 +11,9 @@ public class WaterOverride
     // Change how long the motor runs
     public final int timeout = 5000;
 
+    // Port for socket to bind on
+    private final int port = 9595;
+
     // init objects
     private PumpControl p = null;
     private CurrentTime time = null;
@@ -30,7 +33,8 @@ public class WaterOverride
         time = new CurrentTime();
         try 
         {
-            socketBind = new ServerSocket(9595);
+            socketBind = new ServerSocket(port);
+            System.out.printf("\n%s---\n Socket Bound on %s\n", time.returnTime(), port);
         }
         catch (Exception e) { System.out.printf("\nError in creating socket \n%s", e); }
     }
@@ -45,7 +49,7 @@ public class WaterOverride
         {
             try
             {
-                System.out.printf("%s---\nTrying to listen for override code\n")
+                System.out.printf("%s---\nTrying to listen for override code\n", time.returnTime());
                 s = socketBind.accept();
                 while (enable)
                 {
