@@ -19,7 +19,9 @@ public class WaterOverride
     private BufferedReader inr = null;
 
 
-
+    /**
+     *  Constructor
+     */
     public WaterOverride()
     {
         p = new PumpControl();
@@ -29,9 +31,13 @@ public class WaterOverride
             socketBind = new ServerSocket(9595);
             s = socketBind.accept();
         }
-        catch (Exception e) { System.out.printf("Error in creating socket %s", e); }
+        catch (Exception e) { System.out.printf("\nError in creating socket \n%s", e); }
     }
 
+    /**
+     * 
+     * @param enable Enable the listener for frontend 
+     */
     public void listen(boolean enable)
     {
         new Thread(() -> // Async expression for logging data to a file
