@@ -1,0 +1,5 @@
+#!/bin/bash 
+
+git add . 
+git commit -m "Automated Commit For Rapid Developement"
+git push -u origin master

@@ -1,8 +1,5 @@
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.io.*;
+import java.net.*;
 import com.phidget22.*;
 
 
@@ -65,7 +62,7 @@ public class WaterOverride
                     Thread.sleep(100);
                 }
             }
-            catch (PhidgetException | InterruptedException e)
+            catch (Exception e)
             {
                 //TODO: Does it Work? 
                 System.out.printf("\nError, Quitting!\n%s", e);
