@@ -15,7 +15,7 @@ function watertimeout(req)
     var currentTime = mins.getMinutes()
     console.log(currentTime  + " - " + time + " = " + (currentTime - time))
     // this is just a temporary way to avoid spamming of the water function
-    if ((currentTime - time) > 2 || time == -1)
+    if ((currentTime - time) > 1 || time == -1)
     {
         time = currentTime
         var client = net.connect(9595, 'localhost');

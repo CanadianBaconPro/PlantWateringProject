@@ -51,16 +51,16 @@ public class WaterOverride
             try
             {
                 System.out.printf("%s---\nTrying to listen for override code\n", time.returnTime());
-                s = socketBind.accept();
                 while (enable)
                 {
                     // Try and recieve response
+                    s = socketBind.accept();
                     in = s.getInputStream();
                     inr = new BufferedReader(new InputStreamReader(in));
                     String response = inr.readLine();
                     System.out.printf("\n\n\'%s\'\n\ndata\n\n", response);
                     /// See if response requires the plant to be watered
-                    if (response.compareTo("W") == 0)
+                    if (response != null && response.compareTo("W") == 0)
                     {
                         System.out.printf("Pump Run Request From Website at %s", time.returnTime());
                         p.runPump(timeout);
@@ -69,7 +69,7 @@ public class WaterOverride
                 }
                 // Close objects
                 socketBind.close();
-                s.close();
+                s.close(); // Maybe move inside loop
                 in.close();
                 inr.close();
             }
