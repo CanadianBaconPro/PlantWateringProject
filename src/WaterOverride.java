@@ -35,7 +35,7 @@ public class WaterOverride
         try 
         {
             socketBind = new ServerSocket(port);
-            System.out.printf("\n%s---\nSocket Bound on %s\n", time.returnTime(), port);
+            System.out.printf("\n%s--- Socket Bound on %s\n", time.returnTime(), port);
         }
         catch (Exception e) { System.out.printf("\nError in creating socket \n%s", e); System.exit(-9595); }
     }
@@ -50,7 +50,7 @@ public class WaterOverride
         {
             try
             {
-                System.out.printf("%s---\nTrying to listen for override code\n", time.returnTime());
+                System.out.printf("\n%s---Trying to listen for override code\n", time.returnTime());
                 while (enable)
                 {
                     // Try and recieve response
@@ -62,7 +62,7 @@ public class WaterOverride
                     /// See if response requires the plant to be watered
                     if (response != null && response.compareTo("W") == 0)
                     {
-                        System.out.printf("Pump Run Request From Website at %s", time.returnTime());
+                        System.out.printf("\n%sPump Run Request From Website\n", time.returnTime());
                         p.runPump(timeout);
                     }
                     s.close(); // Maybe move inside loop
