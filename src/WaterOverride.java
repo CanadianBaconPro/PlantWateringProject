@@ -65,13 +65,13 @@ public class WaterOverride
                         System.out.printf("Pump Run Request From Website at %s", time.returnTime());
                         p.runPump(timeout);
                     }
+                    s.close(); // Maybe move inside loop
+                    in.close();
+                    inr.close();
                     Thread.sleep(500);
                 }
                 // Close objects
                 socketBind.close();
-                s.close(); // Maybe move inside loop
-                in.close();
-                inr.close();
             }
             catch (Exception e)
             {
