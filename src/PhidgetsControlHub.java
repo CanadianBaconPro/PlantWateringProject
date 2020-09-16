@@ -4,6 +4,8 @@ import com.phidget22.*;
 
 import java.io.IOException;
 
+// TODO(CB): Implement CORES to server for secure file display
+
 /**
  *
  * @author Harper Kelly, Comp Sci. ID# 803225004 

@@ -1,4 +1,4 @@
-import ws from 'k6/ws'
+var net = require('net')
 const express = require('express')
 const app = express()
 
@@ -18,14 +18,9 @@ function watertimeout(req)
     if ((currentTime - time) > 2 || time == -1)
     {
         time = currentTime
-        var url = 'ws://127.0.0.1:9595';
-        var response = ws.connect(url, null, function(socket) 
-        {
-            socket.on('open', function()
-            {
-                socket.send('W');
-            });
-        });
+        var client = net.connect(9595, 'localhost');
+        client.write('W');
+        client.end();
         return true
     }
     else 
