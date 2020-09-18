@@ -28,9 +28,9 @@ public class WaterOverride
     /**
      *  Constructor
      */
-    public WaterOverride()
+    public WaterOverride(int PumpPort)
     {
-        p = new PumpControl();
+        p = new PumpControl(PumpPort);
         time = new CurrentTime();
         try 
         {
@@ -50,7 +50,7 @@ public class WaterOverride
         {
             try
             {
-                System.out.printf("\n%s---Trying to listen for override code\n", time.returnTime());
+                System.out.printf("\n%s--- Trying to listen for override code\n", time.returnTime());
                 while (enable)
                 {
                     // Try and recieve response

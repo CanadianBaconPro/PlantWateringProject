@@ -25,7 +25,7 @@ public class CheckWaterLevel
         p = new PumpControl(motorRelayPort);
         sm = new SoilMeasurements(sensorRelayPort, sensorPort);
         time = new CurrentTime();
-        wo = new WaterOverride();
+        wo = new WaterOverride(motorRelayPort);
     }
     
     /**

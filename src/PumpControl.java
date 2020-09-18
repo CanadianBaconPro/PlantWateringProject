@@ -27,23 +27,18 @@ public class PumpControl
         }
         catch (PhidgetException e)
         {
-            System.out.println("Error initalizing Pump, Quitting!");
+            System.out.printf("\nError initalizing Pump, Quitting!\n%s", e);
             System.exit(-1);
         }
     }
 
-    public PumpControl() 
-    {
-
-    }
-    
     /**
      * 
      * @param timeout Set time for motor to stay on
      */
     public void runPumpWithoutWait(int timeout)
     {  
-        new Thread(() ->  /// Runs as Asnych function so It wont hold up the program
+        new Thread(() ->  /// Runs as Asnync function so It wont hold up the program
         {
             try 
             {
@@ -52,9 +47,9 @@ public class PumpControl
                 Thread.sleep(timeout);
                 motorRelay.setState(false);
             }
-            catch (PhidgetException | InterruptedException e)
+            catch (Exception e)
             {
-                System.out.println("Error, Quitting!");
+                System.out.printf("\nError initalizing Pump, Quitting!\n%s", e);
                 System.exit(-1);
             }
         }).start();
@@ -94,7 +89,7 @@ public class PumpControl
         }
         catch (PhidgetException e) 
         {
-            System.out.printf("\nError in closing Objects!\nPlease make sure to disable relays manually");
+            System.out.printf("\nError in closing Objects!\nPlease make sure to disable relays manually\n%s", e);
             System.exit(-1);
         }
         return false;
