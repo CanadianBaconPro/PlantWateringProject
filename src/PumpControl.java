@@ -18,7 +18,7 @@ public class PumpControl
         try
         {   
             motorRelay = new DigitalOutput();
-        
+            System.out.printf("\nInitalizing Pump\n");
             motorRelay.setHubPort(port);
             motorRelay.setIsHubPortDevice(true);
             motorRelay.open(1000);
