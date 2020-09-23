@@ -78,6 +78,7 @@ public class LogSurroundings
                     FilesData.append("../log/humidity.txt", space);
                     FilesData.append("../log/time.txt", (time.returnSimpleTime()).split(" "));
                     FilesData.append("../log/time.txt", space);
+                    // TODO(CB): CHANGE THIS VALUE TO 1HR 
                     Thread.sleep(3600000); 
                 }
                 // Close objects
