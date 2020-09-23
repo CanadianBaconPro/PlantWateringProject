@@ -44,35 +44,44 @@ public class WaterOverride
      */
     public boolean listen(boolean enable)
     {
-            try
+        try
+        {
+            System.out.printf("\n%s--- Trying to listen for override code\n", time.returnTime());
+            
+            // Try and recieve response
+            s = socketBind.accept();
+            in = s.getInputStream();
+            inr = new BufferedReader(new InputStreamReader(in));
+            String response = inr.readLine();
+            System.out.printf("\n\n\'%s\'\n\ndata\n\n", response);
+            /// See if response requires the plant to be watered
+            if (response != null && response.compareTo("W") == 0)
             {
-                System.out.printf("\n%s--- Trying to listen for override code\n", time.returnTime());
-                
-                // Try and recieve response
-                s = socketBind.accept();
-                in = s.getInputStream();
-                inr = new BufferedReader(new InputStreamReader(in));
-                String response = inr.readLine();
-                System.out.printf("\n\n\'%s\'\n\ndata\n\n", response);
-                /// See if response requires the plant to be watered
-                if (response != null && response.compareTo("W") == 0)
-                {
-                    System.out.printf("\n%sPump Run Request From Website\n", time.returnTime());
-                    p.runPumpWithoutWait(timeout);
-                }
-                s.close(); // Maybe move inside loop
+                // Close objects before returning true to avoid leaving them open
+                s.close(); 
                 in.close();
                 inr.close();
-                Thread.sleep(500);
-                              // Close objects
                 socketBind.close();
+                
+                return true;
             }
-            catch (Exception e)
-            {
-                //TODO: Does it Work? 
-                System.out.printf("\nError, Quitting!\n%s\n", e);
-                System.exit(-9595);
-            }
+            
+            s.close(); // Maybe move inside loop
+            in.close();
+            inr.close();
+            Thread.sleep(500);
+            
+            // Close objects
+            socketBind.close();
+        }
+        catch (Exception e)
+        {
+            //TODO: Does it Work? 
+            System.out.printf("\nError, Quitting!\n%s\n", e);
+            System.exit(-9595);
+        }
+        
+        return false;
     }
         
 }
