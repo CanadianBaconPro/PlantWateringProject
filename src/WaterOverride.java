@@ -33,7 +33,7 @@ public class WaterOverride
         try 
         {
             socketBind = new ServerSocket(port);
-            System.out.printf("\n%s--- Socket Bound on %s\n", time.returnTime(), port);
+            System.out.printf("\n\n%s--- Socket Bound on %s\n\n", time.returnTime(), port);
         }
         catch (Exception e) { System.out.printf("\nError in creating socket \n%s", e); System.exit(-9595); }
     }
@@ -71,8 +71,8 @@ public class WaterOverride
         catch (Exception e)
         {
             //TODO: Does it Work? 
-            try { s.close(); } catch (Exception ree) { System.out.printf("\n%s\n", ree); }
-            System.out.printf("\nError, Quitting!\n%s\n", e);
+            try { s.close(); } catch (Exception ree) { System.out.printf("\n\n%s\n\n", ree); }
+            System.out.printf("\n\nError, Quitting!\n%s\n", e);
             System.exit(-9595);
         }
         

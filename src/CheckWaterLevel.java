@@ -46,7 +46,7 @@ public class CheckWaterLevel
                         {
                             ExecuteProcess.text("./wateringplant.message");
 		    	            p.runPumpWithoutWait(timeout);
-		    	            System.out.printf("\n%s--- \033[1;36mWatering\033[0m\n", time.returnTime());
+		    	            System.out.printf("\n\n%s--- \033[1;36mWatering\033[0m\n\n", time.returnTime());
 		    	            Thread.sleep((timeout + 2000));
                         }
                     }

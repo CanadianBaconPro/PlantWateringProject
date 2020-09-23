@@ -9,8 +9,8 @@ public class ExecuteProcess
         try
 		{
 		    Process pro = Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", PathToMessage});
-		    System.out.printf("Process Executed Successfully\n");
+		    System.out.printf("\n\nProcess Executed Successfully\n\n");
         }
-        catch (Exception e) {System.out.printf("Error in Executing Process\n");}
+        catch (Exception e) {System.out.printf("\n\nError in Executing Process\n\n");}
     }
 }
