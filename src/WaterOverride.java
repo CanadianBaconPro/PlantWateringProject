@@ -53,19 +53,16 @@ public class WaterOverride
             in = s.getInputStream();
             inr = new BufferedReader(new InputStreamReader(in));
             String response = inr.readLine();
-            System.out.printf("\n\n\'%s\'\n\ndata\n\n", response);
             /// See if response requires the plant to be watered
             if (response != null && response.compareTo("W") == 0)
             {
                 // Close objects before returning true to avoid leaving them open
-                socketBind.close();
                 in.close();
                 inr.close();
 
                 return true;
             }
             
-            s.close(); // Maybe move inside loop
             in.close();
             inr.close();
             Thread.sleep(500);
