@@ -15,7 +15,6 @@ public class WaterOverride
     private final int port = 9595;
 
     // init objects
-    private PumpControl p = null;
     private CurrentTime time = null;
     
     // Objects for listening for request from frontend
@@ -28,9 +27,8 @@ public class WaterOverride
     /**
      *  Constructor
      */
-    public WaterOverride(int PumpPort)
+    public WaterOverride()
     {
-        p = new PumpControl(PumpPort);
         time = new CurrentTime();
         try 
         {
@@ -44,33 +42,29 @@ public class WaterOverride
      * 
      * @param enable Enable the listener for frontend 
      */
-    public void listen(boolean enable)
+    public boolean listen(boolean enable)
     {
-        new Thread(() -> // Async expression for logging data to a file
-        {
             try
             {
                 System.out.printf("\n%s--- Trying to listen for override code\n", time.returnTime());
-                while (enable)
+                
+                // Try and recieve response
+                s = socketBind.accept();
+                in = s.getInputStream();
+                inr = new BufferedReader(new InputStreamReader(in));
+                String response = inr.readLine();
+                System.out.printf("\n\n\'%s\'\n\ndata\n\n", response);
+                /// See if response requires the plant to be watered
+                if (response != null && response.compareTo("W") == 0)
                 {
-                    // Try and recieve response
-                    s = socketBind.accept();
-                    in = s.getInputStream();
-                    inr = new BufferedReader(new InputStreamReader(in));
-                    String response = inr.readLine();
-                    System.out.printf("\n\n\'%s\'\n\ndata\n\n", response);
-                    /// See if response requires the plant to be watered
-                    if (response != null && response.compareTo("W") == 0)
-                    {
-                        System.out.printf("\n%sPump Run Request From Website\n", time.returnTime());
-                        p.runPumpWithoutWait(timeout);
-                    }
-                    s.close(); // Maybe move inside loop
-                    in.close();
-                    inr.close();
-                    Thread.sleep(500);
+                    System.out.printf("\n%sPump Run Request From Website\n", time.returnTime());
+                    p.runPumpWithoutWait(timeout);
                 }
-                // Close objects
+                s.close(); // Maybe move inside loop
+                in.close();
+                inr.close();
+                Thread.sleep(500);
+                              // Close objects
                 socketBind.close();
             }
             catch (Exception e)
@@ -79,7 +73,6 @@ public class WaterOverride
                 System.out.printf("\nError, Quitting!\n%s\n", e);
                 System.exit(-9595);
             }
-        }).start();
     }
         
 }

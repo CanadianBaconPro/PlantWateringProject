@@ -25,7 +25,7 @@ public class CheckWaterLevel
         p = new PumpControl(motorRelayPort);
         sm = new SoilMeasurements(sensorRelayPort, sensorPort);
         time = new CurrentTime();
-        wo = new WaterOverride(motorRelayPort);
+        wo = new WaterOverride();
     }
     
     /**
@@ -34,12 +34,33 @@ public class CheckWaterLevel
      */
     public void run(boolean running)
     {
+        if (running)
+        {
+            new Thread(() ->
+            {
+                try
+                {
+                    while (true)
+                    {
+                        if (wo.listen(true))
+                        {
+                            ExecuteProcess.text("./wateringplant.message");
+		    	            p.runPumpWithoutWait(timeout);
+		    	            System.out.printf("\n%s --- \033[1;36mWatering\033[0m\n", time.returnTime());
+		    	            Thread.sleep((timeout + 2000));
+                        }
+                    }
+                }
+                catch (Exception e) { System.out.printf("\nError! \n%s\n", e); }
+
+            }).start();
+        }
+
         new Thread(() ->
         {
             try
             {
                 // Start the listener for the frontend 
-                wo.listen(true);
                 while (running)
                 {
                     WaterPlant:
