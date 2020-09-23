@@ -58,11 +58,10 @@ public class WaterOverride
             if (response != null && response.compareTo("W") == 0)
             {
                 // Close objects before returning true to avoid leaving them open
-                s.close(); 
+                socketBind.close();
                 in.close();
                 inr.close();
-                socketBind.close();
-                
+
                 return true;
             }
             
@@ -70,13 +69,12 @@ public class WaterOverride
             in.close();
             inr.close();
             Thread.sleep(500);
-            
             // Close objects
-            socketBind.close();
         }
         catch (Exception e)
         {
             //TODO: Does it Work? 
+            try { s.close(); } catch (Exception ree) { System.out.printf("\n%s\n", ree); }
             System.out.printf("\nError, Quitting!\n%s\n", e);
             System.exit(-9595);
         }
