@@ -49,5 +49,6 @@ Make sure you have the proper permissions to copy to the /bin directory, you may
 ````
 Compile to jarfile using
 - jar cfe app.jar MyApp MyApp.class
+- jar -cfve (Name of resulting Jarfile) WetPlant.jar (Main Class) PhidgetsControlHub (Class Files to be Included) *.class
 
 https://docs.oracle.com/javase/tutorial/deployment/jar/appman.html
