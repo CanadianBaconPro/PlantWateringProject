@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Created By CanadianBacon
+#
+# Usage
+# ./FindPID
+
+ps aux | grep http.server
+ps aux | grep main.js
+ps aux | grep -i java

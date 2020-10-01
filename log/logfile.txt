@@ -1,0 +1,1 @@
+./StartPlantService: line 17: java: command not found

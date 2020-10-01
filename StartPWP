@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Script created by CanadianBacon
+#
+# This is the main start script
+# Running this should start everything
+#
+# Usage
+# ./StartPWP
+# or
+# ./StartPWP -s (For running in the background)
+#
+# This is only to be ran inside of the working directory
+# Ex. PlantWateringProject
+
+echo "Starting modules"
+
+if [ "$1" = "-s" ]
+then
+  printf "\n"
+  python3 -m http.server </dev/null &>log/pyserver.txt &
+  printf "\n"
+  echo "HTTP Server Started"
+  cd js/
+  printf "\n"
+  ./StartNodeServer -s &
+  echo "Node.js Server Started"
+  cd ../src/
+  printf "\n"
+  ./StartPlantService -s
+  cd - 
+  printf "\n"
+else
+  printf "\n"
+  python3 -m http.server </dev/null &>log/pyserver.txt &
+  echo "HTTP Server Started"
+  cd js/
+  printf "\n"
+  ./StartNodeServer -s &
+  echo "Node.js Server Started"
+  cd ../src/
+  printf "\n"
+  ./StartPlantService
+  cd - 
+  printf "\n"
+fi
+
