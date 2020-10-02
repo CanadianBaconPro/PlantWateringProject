@@ -1,5 +1,5 @@
 // This is the IP for the server hosting the log files 
-var ip = "192.168.99.1:8000";
+var ip = "192.168.1.191:8000";
 
 function getData(keyword, path)
 {
