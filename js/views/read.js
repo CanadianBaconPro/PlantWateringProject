@@ -9,7 +9,7 @@ function getData(keyword, path)
 	client.onreadystatechange = function() 
 	{
 		var text = client.responseText;
-		text = text.substring(text.length - 120, text.length);
+		text = text.substring(text.length - 240, text.length);
 		localStorage.setItem(keyword, text);
 		console.log(keyword + text);
 	}
