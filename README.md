@@ -1,6 +1,6 @@
 # Plant Watering Project with Phidgets
 
-## This is the more experimental branch 
+## This is the more experimental branch Checkout jarfile for more stability
 
 simply run 
 
