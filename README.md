@@ -5,7 +5,7 @@
 simply run 
 
     ./StartPWP
-
+    ./StartPWP -s (Silent Mode) 
 to start the program
 
 ---
